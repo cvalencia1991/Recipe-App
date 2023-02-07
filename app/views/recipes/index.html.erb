@@ -2,17 +2,17 @@
 
 <h1>Recipes</h1>
 
-<%
-=begin%>
  <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
+    <h2>
+      <%= recipe.name %>
+    </h2>
     <p>
-      <%= link_to "Show this recipe", recipe %>
+    <%=recipe.description%>
     </p>
+    <%= link_to "recipe details", user_recipe_path(params[:user_id],recipe.id) %>
   <% end %>
 </div>
-<%
-=end%>
+
 
 <%= link_to "New recipe", new_user_recipe_path %>
