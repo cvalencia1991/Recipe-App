@@ -11,7 +11,7 @@ class Ability
     #   return unless user.admin?
     #   can :manage, :all
     #
-    user ||=User.new
+    user ||= User.new
 
     if user.admin?
       can :manage, :all
