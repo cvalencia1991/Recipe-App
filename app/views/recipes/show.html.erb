@@ -1,3 +1,20 @@
 <h1>recipe show</h1>
 
-<%= @recipe.name%>
+    <div>
+        <%= @recipe.name%>
+    </div>
+    <div>
+        <div>
+            prearation time: <%= @recipe.preparation_time%> hour
+        </div>
+        <div>
+            Public: <%= check_box_tag checked: @recipe.public %>
+        </div>
+    </div>
+    Cooking time: <%= @recipe.cooking_time%> hour
+    <div>
+    Steeps go here...
+    </div>
+    <%= link_to "Add ingrendet", user_recipe_foods_path(params[:user_id],params[:id])%>
+
+

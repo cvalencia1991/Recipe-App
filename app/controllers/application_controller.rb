@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
   protect_from_forgery with: :exception
-
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :update_allowed_parameters, if: :devise_controller?
 
   protected
@@ -11,4 +12,11 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :surname, :email, :password, :current_password)
     end
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:username, :email)
+    end
+  end
+
 end
