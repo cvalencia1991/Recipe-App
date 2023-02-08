@@ -1,0 +1,14 @@
+
+<h1>public</h1>
+
+<% @user.each do |user| %>
+<% user.get_recipes.each do |recipe| %>
+<% if recipe.public%>
+    <div>
+    <%= user.name%>
+    <%= recipe.name %>
+    <%= recipe.foods.length %>
+    </div>
+<%end%>
+<%end%>
+<%end%>
