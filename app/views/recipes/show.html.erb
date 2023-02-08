@@ -17,4 +17,10 @@
     </div>
     <%= link_to "Add ingrendet", user_recipe_foods_path(params[:user_id],params[:id])%>
 
-
+    <% @food.each do |food| %>
+        <div>
+            <%= render food %>
+        </div>
+            <%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], food.id),data: {turbo_method: :delete}  %>
+            <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], food.id), method: :edit  %>
+    <% end %>
