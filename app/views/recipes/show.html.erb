@@ -17,6 +17,7 @@
     </div>
     <%= link_to "foods", user_recipe_foods_path(params[:user_id],params[:id])%>
     <%= link_to "add ingredeints", new_user_recipe_recipe_food_path(params[:user_id],params[:id])%>
+    <%= link_to "general shooping list", user_recipe_shopinglists_path(params[:user_id],params[:id])%>
     <% @recipefoods.each do |foods| %>
         <div>
             <%= foods.food.name %>
