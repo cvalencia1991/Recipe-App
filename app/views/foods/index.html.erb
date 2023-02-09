@@ -1,11 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Foods</h1>
-  <%= link_to "New food", new_user_recipe_food_path %>
-<div id="foods">
-  <% @foods.each do |food| %>
-    <%= render food %>
-  <% end %>
+<div class="m-20">
+  <h1 class="mb-11 text-3xl font-medium">Foods</h1>
+  <div id="foodsList">
+      <% @foods.each do |food| %>
+        <%= render food %>
+      <% end %>
+  </div>
+  <%= link_to "Add new food", new_user_recipe_food_path, class:"text-white rounded-md p-2 bg-slate-700 hover:bg-white hover:text-slate-700 hover:border-2 hover:border-slate-700" %>
 </div>
-
-

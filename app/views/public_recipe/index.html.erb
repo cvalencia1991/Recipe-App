@@ -1,16 +1,21 @@
+<div class="m-20">
+  <h1 class="mb-11 text-3xl">Public Recipes</h1>
 
-<h1>public Recipes</h1>
-
+  <div id="recipes">
 <% @user.each do |user| %>
 
     <% user.sortrecipes.each do |recipe| %>
         <% if recipe.public%>
-            <div>
-                <%= user.name%>
-                <%= recipe.name %>
-                <%= link_to "recipe details", user_recipe_path(user.id,recipe.id) %>
+            <div class="bg-white border-b-2 text-slate-700 border-slate-700">
+                <h3 class="p-4 text-lg"><%= user.name%></h3>
+                <h4 class="p-4 font-medium"><%= recipe.name %></h1>
+                <p class="my-7 border-solid w-56 rounded-md border-2 borde  r-slate-200 p-4 bg-gray-50 hover:bg-black hover:text-white text-center">
+                    <%= link_to "recipe details", user_recipe_path(user.id,recipe.id) %>
+                </p>
             </div>
         <%end%>
     <%end%>
 <%end%>
 <%= link_to "Users", users_path %>
+  </div>
+</div>

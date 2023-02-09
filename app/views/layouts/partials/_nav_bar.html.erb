@@ -1,0 +1,20 @@
+<main class="w-full h-[60px] px-[10%] m-auto flex justify-between items-center bg-blue-500 p-16 text-white ">
+  <%= link_to "Recipes", root_path, class: "text-2xl" %>
+  <nav class="navbar">
+    <ul class="navLinks flex items-center gap-4">
+      <% if user_signed_in? %>
+        <li><%= link_to "Food List", user_recipe_recipe_foods_path(current_user.id, current_user.recipes.ids) %></li>
+        <li><%= link_to "My Recipes", user_recipes_path(current_user.id) %></li>
+        <li class="border-l-2 pl-2"><%= button_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% if current_user %>
+          <li class="bg-white text-[#11537d] px-2 py-1 rounded-md font-medium">
+            <%= current_user.name %>
+          </li>
+        <% end %>
+      <% else %>
+        <li><%= button_to "Sign in", new_user_session_path, method: :get %></li>
+        <li><%= button_to "Sign up", new_user_registration_path, method: :get %></li>
+      <% end %>
+    </ul>
+  </nav>
+</main>
