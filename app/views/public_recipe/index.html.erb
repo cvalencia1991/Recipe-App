@@ -2,7 +2,8 @@
 <h1>public</h1>
 
 <% @user.each do |user| %>
-<% user.recipes.each do |recipe| %>
+
+<% user.sortrecipes.each do |recipe| %>
 <% if recipe.public%>
     <div>
     <%= user.name%>
