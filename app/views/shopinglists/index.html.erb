@@ -1,0 +1,10 @@
+<h1>General shopping list</h1>
+
+<h2>amought of items to buy: <%= @recipefoods.length%></h2>
+<h3>total value of food needed it: <%= @recipefoods.sum {
+    |recipefood| (recipefood.quantity - recipefood.food.quantity) * recipefood.food.price } %></h3>
+<% @recipefoods.each do |foods| %>
+<%= foods.food.name%>
+<%= foods.quantity - foods.food.quantity %>
+<%= foods.food.price * (foods.quantity - foods.food.quantity) %>
+<%end%>

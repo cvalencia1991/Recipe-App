@@ -15,12 +15,19 @@
     <div>
     Steeps go here...
     </div>
-    <%= link_to "Add ingrendet", user_recipe_foods_path(params[:user_id],params[:id])%>
-
-    <% @food.each do |food| %>
+    <%= link_to "foods", user_recipe_foods_path(params[:user_id],params[:id])%>
+    <%= link_to "add ingredeints", new_user_recipe_recipe_food_path(params[:user_id],params[:id])%>
+    <%= link_to "general shooping list", user_recipe_shopinglists_path(params[:user_id],params[:id])%>
+    <% @recipefoods.each do |foods| %>
         <div>
-            <%= render food %>
+            <%= foods.food.name %>
         </div>
-            <%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], food.id),data: {turbo_method: :delete}  %>
-            <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], food.id), method: :edit  %>
+            <%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], foods.id),data: {turbo_method: :delete}  %>
+            <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], foods.id), method: :edit  %>
     <% end %>
+
+
+
+
+
+
