@@ -9,7 +9,7 @@ class User < ApplicationRecord
     role == 'admin'
   end
 
-  def get_recipes
+  def recipes
     recipes.order('created_at Desc')
   end
 end
