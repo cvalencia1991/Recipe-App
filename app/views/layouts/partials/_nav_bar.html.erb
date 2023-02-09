@@ -3,7 +3,7 @@
   <nav class="navbar">
     <ul class="navLinks flex items-center gap-4">
       <% if user_signed_in? %>
-        <li><%= link_to "Food List", user_recipe_recipe_foods_path(current_user.id, current_user.recipes.ids) %></li>
+        <li><%= link_to "Food List", user_recipe_foods_path(current_user.id,1) %></li>
         <li><%= link_to "My Recipes", user_recipes_path(current_user.id) %></li>
         <li class="border-l-2 pl-2"><%= button_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% if current_user %>
