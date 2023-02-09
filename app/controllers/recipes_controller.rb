@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @recipe = Recipe.find(params[:id])
+    @food = @user.foods
   end
 
   # GET /recipes/new
@@ -27,7 +28,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to user_recipes_url(@recipe), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to user_recipes_url(params[:user_id]), notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +41,7 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to recipe_url(params[:user_id]), notice: 'Recipe was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit, status: :unprocessable_entity }
