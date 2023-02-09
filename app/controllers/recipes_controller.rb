@@ -9,9 +9,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @user = User.find(params[:user_id])
-    @recipe = Recipe.find(params[:id])
-    @food = @user.foods
+    @users = User.where(id: params[:user_id]).includes(:recipes, :foods)
+    @food = Food.all
   end
 
   # GET /recipes/new
