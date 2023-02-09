@@ -1,22 +1,5 @@
-<div id="<%= dom_id food %>">
-  <p>
-    <strong>Name:</strong>
-    <%= food.name %>
-  </p>
+<tr id="<%= dom_id food %>" class="border-b-2 bg-white text-slate-700 border-slate-700">
+  <td class="p-4 font-medium"><%= food.name %></td>
+  <td class="p-4 font-medium"><%= food.measuement_unit %></td>
+  <td class="p-4 font-medium"><%= food.price %></td>
 
-  <p>
-    <strong>Measuement unit:</strong>
-    <%= food.measuement_unit %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= food.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= food.quantity %>
-  </p>
-
-</div>

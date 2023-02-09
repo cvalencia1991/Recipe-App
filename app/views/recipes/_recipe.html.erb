@@ -1,32 +1,34 @@
-<div id="<%= dom_id recipe %>">
-  <p>
+<div id="<%= dom_id recipe %>" class="w-full mb-10 border-2 border-slate-700">
+<div class="flex w-full flex-col items-center border-b-2">
+  <p class="mb-10 mt-6 text-2xl">
     <strong>Name:</strong>
     <%= recipe.name %>
   </p>
 
-  <p>
+  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Preparation time:</strong>
     <%= recipe.preparation_time %>
   </p>
 
-  <p>
+  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Cooking time:</strong>
     <%= recipe.cooking_time %>
   </p>
 
-  <p>
+  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Description:</strong>
     <%= recipe.description %>
   </p>
 
-  <p>
+  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Public:</strong>
     <%= recipe.public %>
   </p>
 
-  <p>
+      <p class="mb-11">
     <strong>User:</strong>
     <%= recipe.user_id %>
   </p>
+    </div>
 
 </div>

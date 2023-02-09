@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"w-full px-4 py-3 border-solid" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.number_field :preparation_time %>
+    <%= form.number_field :preparation_time, class:"w-full px-4 py-3 border-solid" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.number_field :cooking_time %>
+    <%= form.number_field :cooking_time, class:"w-full px-4 py-3 border-solid" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"w-full px-4 py-3 border-solid" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :public, style: "display: block" %>
     <%= form.check_box :public %>
 
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.hidden_field :user_id, value: params[:user_id] %>
   </div>
 
-  <div>
+  <div class="cursor-pointer">
     <%= form.submit %>
   </div>
 <% end %>

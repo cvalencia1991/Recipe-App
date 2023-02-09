@@ -1,7 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<div>
+<div class="mt-5 border-solid rounded-md border-2 borde flex justify-between r-slate-200 p-8 bg-gray-50 hover:bg-slate-400 text-center">
+<div class="mt-5 border-solid w-32 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-black hover:text-white text-center">
   <%= link_to "Back to users", users_path %>
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
+  </div>
+<div class="mt-5 border-solid w-32 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-black hover:text-white text-center">
  <%= link_to "Recipes", user_recipes_path(params[:id]) %>
+ </div>
+</div>
