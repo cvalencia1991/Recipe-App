@@ -7,7 +7,7 @@
         <li><%= link_to "My Recipes", user_recipes_path(current_user.id) %></li>
         <li class="border-l-2 pl-2"><%= button_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% if current_user %>
-          <li class="bg-white text-[#11537d] px-2 py-1 rounded-md font-medium">
+          <li class="bg-white text-[#11537d] px-2 py-1 rounded-md font-medium text-black">
             <%= current_user.name %>
           </li>
         <% end %>
