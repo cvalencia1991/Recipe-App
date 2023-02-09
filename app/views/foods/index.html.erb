@@ -1,9 +1,25 @@
 <div class="m-20">
   <h1 class="mb-11 text-3xl font-medium">Foods</h1>
   <div id="foodsList">
+  <table class="mb-20 border-2 text-left w-[80vw] border-slate-700 text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 p-4">
+      <tr>
+        <th class="text-xs text-white uppercase bg-gray-700 p-4">Food</th>
+        <th class="text-xs text-white uppercase bg-gray-700 p-4">Measurement unit</th>
+        <th class="text-xs text-white uppercase bg-gray-700 p-4">Price</th>
+        <th class="text-xs text-white uppercase bg-gray-700 p-4">Action</th>
+      </tr>
       <% @foods.each do |food| %>
         <%= render food %>
+         <% if user_signed_in? %>
+                  <th>
+                    <%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:recipe_id], food.id),data: {turbo_method: :delete}, class:"p-4 font-medium hover:text-red-500"  %>
+                    <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:recipe_id], food.id), method: :edit, class:"p-4 font-medium hover:text-green-400"  %>
+                  </th> 
+</tr>
+            <% end %>
       <% end %>
+      
+      </table>
   </div>
   <%= link_to "Add new food", new_user_recipe_food_path, class:"text-white rounded-md p-2 bg-slate-700 hover:bg-white hover:text-slate-700 hover:border-2 hover:border-slate-700" %>
 </div>

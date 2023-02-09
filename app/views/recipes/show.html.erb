@@ -18,8 +18,8 @@
             <td class="p-4 font-medium"><%= foods.quantity %></td>
             <td class="p-4 font-medium"><%= foods.food.price * foods.quantity %></td>
              <% if user_signed_in? %>
-                  <td><%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], foods.id),data: {turbo_method: :delete}, class:"p-4 font-medium hover:text-green-400"  %>
-                  <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], foods.id), method: :edit, class:"p-4 font-medium hover:text-red-500"  %></td>  
+                  <td><%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], foods.id),data: {turbo_method: :delete}, class:"p-4 font-medium hover:text-red-500"  %>
+                  <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], foods.id), method: :edit, class:"p-4 font-medium hover:text-green-400"  %></td>  
             <% end %>
         </tr>
     <% end %>
