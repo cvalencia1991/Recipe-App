@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :quantity, style: "display: block" %>
     <%= form.number_field :quantity %>
   </div>
 
-  <div>
+  <div class="w-full px-4 py-3 border flex justify-between">
     <%= form.label :recipe_id, style: "display: block" %>
     <%= form.text_field :recipe_id %>
   </div>
 
-  <div>
+  <div class="w-full px-4 py-3 border flex justify-between">
     <%= form.label :food_id, style: "display: block" %>
     <%= form.text_field :food_id %>
   </div>
 
-  <div>
+  <div class="mt-6 mb-10 mx-auto w-fit border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-slate-700 hover:text-white text-center">
     <%= form.submit %>
   </div>
 <% end %>

@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"border border-solid p-1 p-1" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :preparation_time, style: "display: block" %>
-    <%= form.number_field :preparation_time %>
+    <%= form.number_field :preparation_time, class:"border border-solid p-1" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :cooking_time, style: "display: block" %>
-    <%= form.number_field :cooking_time %>
+    <%= form.number_field :cooking_time, class:"border border-solid p-1" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"border border-solid p-1" %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :public, style: "display: block" %>
-    <%= form.check_box :public %>
+    <%= form.check_box :public, class:"border border-solid p-1" %>
 
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.hidden_field :user_id, value: params[:user_id] %>
   </div>
 
-  <div>
+  <div class="mt-11 border-solid p-1 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-slate-400 text-center">
     <%= form.submit %>
   </div>
 <% end %>

@@ -1,17 +1,14 @@
-<div id="<%= dom_id recipe_food %>">
-  <p>
-    <strong>Quantity:</strong>
-    <%= recipe_food.quantity %>
-  </p>
+<tr id="<%= dom_id recipe_food %>", class="bg-white border-b-2 text-slate-700 border-slate-700">
+  <td class="p-4 font-medium"><%= recipe_food.food.name %></td>
+  <td class="p-4 font-medium"><%= recipe_food.quantity %></td>
+  <td class="p-4 font-medium"><%= recipe_food.food.price * recipe_food.quantity %></td>
+  <% unless current_page?(general_shopping_list_path) %>
+    <% if user_signed_in? %>
+      <td class="flex gap-4  justify-center">
+        <%= link_to 'modify', edit_recipe_recipe_food_path(@recipe, recipe_food), class:"p-4 font-medium hover:text-green-400"%>
+        <%= button_to 'delete', recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id),  method: :delete, class:"p-4 font-medium hover:text-red-500" %>
+      </td>
+    <% end %>
+  <% end %>
+</tr>
 
-  <p>
-    <strong>Recipe:</strong>
-    <%= recipe_food.recipe_id %>
-  </p>
-
-  <p>
-    <strong>Food:</strong>
-    <%= recipe_food.food_id %>
-  </p>
-
-</div>

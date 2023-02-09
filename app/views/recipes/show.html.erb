@@ -1,26 +1,24 @@
-<h1>recipe show</h1>
-
-    <div>
-        <%= @recipe.name%>
-    </div>
-    <div>
-        <div>
-            prearation time: <%= @recipe.preparation_time%> hour
-        </div>
-        <div>
-            Public: <%= check_box_tag checked: @recipe.public %>
-        </div>
-    </div>
-    Cooking time: <%= @recipe.cooking_time%> hour
-    <div>
-    Steeps go here...
-    </div>
-    <%= link_to "Add ingrendet", user_recipe_foods_path(params[:user_id],params[:id])%>
-
-    <% @food.each do |food| %>
-        <div>
-            <%= render food %>
-        </div>
-            <%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], food.id),data: {turbo_method: :delete}  %>
-            <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], food.id), method: :edit  %>
+<div class="m-20 w-[80%] mx-auto flex flex-col items-center">
+  <%= render @recipe %>
+<div class="flex w-full justify-center mb-10 gap-[300px]">
+    <% if current_user && current_user.id == @recipe.user_id %>
+      <%= link_to "Add Ingredient", user_recipe_foods_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-slate-700 hover:text-white text-center"%>
     <% end %>
+  </div>
+     <table class="mb-20 border-2 text-left w-[80vw] border-slate-700" class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 p-4">
+    <tr>
+      <th class="text-xs text-white uppercase bg-gray-700 p-4">Food</th>
+      <th class="text-xs text-white uppercase bg-gray-700 p-4">Quantity</th>
+      <th class="text-xs text-white uppercase bg-gray-700 p-4">Value</th>
+      <th class="text-xs text-white uppercase bg-gray-700 p-4 text-center">Action</th>
+    </tr>
+    <% @food.each do |recipe_food| %>
+        <div>
+      <%= render recipe_food %>
+        </div>
+        <%end%>
+            </table>
+  <div class="self-start">
+    <%= link_to "Back to recipes", root_path, class:"text-white rounded-md p-2 bg-slate-700 hover:bg-white hover:text-slate-700 hover:border-2 hover:border-slate-700" %>
+  </div>
+</div>

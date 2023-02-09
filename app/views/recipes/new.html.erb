@@ -1,9 +1,11 @@
-<h1>New recipe</h1>
+<div class="m-20 flex flex-col items-center">
+  <h1 class="mb-11 text-3xl">New recipe</h1>
 
 <%= render "form", recipe: @recipe %>
 
 <br>
 
-<div>
-  <%= link_to "Back to recipes", user_recipes_path %>
+  <div class="mt-20">
+  <%= link_to "Back to recipes", user_recipes_path, class:"self-start border-solid rounded-md border-2 borde  r-slate-200 p-2 bg-[#11537d] hover:bg-cyan-500 text-white" %>
+</div>
 </div>

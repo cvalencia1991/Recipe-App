@@ -11,31 +11,31 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :measuement_unit, style: "display: block" %>
     <%= form.text_field :measuement_unit %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :price, style: "display: block" %>
     <%= form.number_field :price %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.label :quantity, style: "display: block" %>
     <%= form.number_field :quantity %>
   </div>
 
-  <div>
+  <div class="mb-4">
     <%= form.hidden_field :user_id, value: params[:user_id] %>
   </div>
 
-  <div>
+  <div class="mt-6 mb-10 mx-auto w-[50%] border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-slate-700 hover:text-white text-center">
     <%= form.submit %>
   </div>
 <% end %>

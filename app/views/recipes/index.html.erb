@@ -1,19 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<div class="m-20">
 
-<h1>Recipes</h1>
+  <h1 class="mb-11 text-3xl">My Recipes</h1>
 
- <div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <h2>
-      <%= recipe.name %>
-    </h2>
-    <%= link_to "Remove",user_recipe_path(params[:user_id],recipe.id),data: {turbo_method: :delete}  %>
+<% if user_signed_in? %>
+    <div id="recipes">
+      <% @recipes.each do |recipe| %>
+        <%= render recipe %>
     <p>
     <%=recipe.description%>
     </p>
-    <%= link_to "recipe details", user_recipe_path(params[:user_id],recipe.id) %>
+        <div class="mt-8">
+    <%= link_to "Remove",user_recipe_path(params[:user_id],recipe.id),data: {turbo_method: :delete}, class:"text-white rounded-md p-2 bg-slate-700 hover:bg-white hover:text-slate-700 hover:border-2 hover:border-slate-700"  %>
+    <%= link_to "recipe details", user_recipe_path(params[:user_id],recipe.id), class:"border-solid rounded-md border-2 border-slate-200 p-2 bg-slate-200 hover:bg-slate-400" %>
+<%= link_to "New recipe", new_user_recipe_path, class:"border-solid rounded-md border-2 border-slate-200 p-2 bg-slate-200 hover:bg-slate-400" %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 </div>
+  <%= link_to "New recipe", new_user_recipe_path, class:"ml-14 border-solid rounded-md border-2 border-slate-200 p-2 bg-slate-200 hover:bg-slate-400" %>
 
 
-<%= link_to "New recipe", new_user_recipe_path %>
