@@ -5,6 +5,7 @@
       <% if user_signed_in? %>
         <li><%= link_to "Food List", user_recipe_foods_path(current_user.id,1) %></li>
         <li><%= link_to "My Recipes", user_recipes_path(current_user.id) %></li>
+        <%= link_to "All Recipes", root_path %>
         <li class="border-l-2 pl-2"><%= button_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% if current_user %>
           <li class="bg-white text-[#11537d] px-2 py-1 rounded-md font-medium text-black">

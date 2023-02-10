@@ -7,7 +7,7 @@
   <% if user_signed_in? %>
   <% @recipes.each do |recipe| %>
 <div class="mt-5 border-solid w-56 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-slate-400 text-center">
-<h2 class="my-5 border-solid w-32 rounded-md p-2 bg-black text-white text-center">
+<h2 class="my-5 mx-auto border-solid w-32 rounded-md p-2 bg-black text-white text-center">
       <%= recipe.name %>
     </h2>
     <%= link_to "Remove",user_recipe_path(params[:user_id],recipe.id),data: {turbo_method: :delete}, class: "text-lg text-red-600"  %>
