@@ -1,6 +1,6 @@
 class PublicRecipeController < ApplicationController
   def index
-    @user = User.includes(:foods)
+    @foods = Food.includes(:user).all
   end
 
   def destroy
@@ -11,6 +11,4 @@ class PublicRecipeController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
 end
