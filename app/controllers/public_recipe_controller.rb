@@ -1,6 +1,5 @@
 class PublicRecipeController < ApplicationController
   def index
-    @recipefoods = RecipeFood.includes(:food).all
-    @user = User.all
+    @user = User.includes(:foods).all
   end
 end
