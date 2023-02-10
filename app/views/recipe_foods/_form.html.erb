@@ -1,4 +1,4 @@
-<%= form_with( url: user_recipe_recipe_foods_path(params[:user_id], params[:recipe_id]), model: recipe_food,class:"w-full") do |form| %>
+<%= form_with( url: user_recipe_recipe_foods_path(params[:user_id], params[:recipe_id]), model: recipe_food,class:" flex flex-col w-full items-center text-center") do |form| %>
   <% if recipe_food.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(recipe_food.errors.count, "error") %> prohibited this recipe_food from being saved:</h2>

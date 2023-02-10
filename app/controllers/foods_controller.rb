@@ -50,7 +50,7 @@ class FoodsController < ApplicationController
   def destroy
     @food.destroy
     respond_to do |format|
-      format.html { redirect_to user_recipe_path, notice: 'Food was successfully destroyed.' }
+      format.html { redirect_to  user_recipes_path(params[:user_id]), notice: 'Food was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

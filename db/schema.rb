@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_165159) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_foods_on_name"
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
@@ -44,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_07_165159) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_recipes_on_name"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
