@@ -79,6 +79,18 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## 🎥  Video <a name="live-demo"></a>
+
+
+
+
+https://user-images.githubusercontent.com/107327344/218142579-e5d44a53-7026-47d2-8c72-8caa2a9f7afc.mp4
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -212,7 +224,7 @@ I would like to thank to my peer that working on this project
 
 - **can you deploy this project using Front end langague**
 
-  -Of course, you can inplement with any framework, change this using the an API
+  - Of course, you can inplement with any framework, change this using the an API
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
