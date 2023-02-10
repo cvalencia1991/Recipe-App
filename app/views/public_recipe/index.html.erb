@@ -3,12 +3,14 @@
 
   <div id="recipes">
 <% @user.each do |user| %>
-
-    <% user.sortrecipes.each do |recipe| %>
+    <% user.sortrecipes.each_with_index do |recipe| %>
         <% if recipe.public%>
+        <h2 class="my-5 border-solid w-72 rounded-md p-2 bg-black text-white text-xl text-center">amought of items to buy: <%= user.foods.length%></h2>
+        <h3 class="my-5 border-solid w-80 rounded-md p-2 bg-black text-white text-xl text-center">total value of food needed it:
+         <%=  user.foods.sum {|food| food.quantity} %></h3>
             <div class="bg-white border-b-2 text-slate-700 border-slate-700">
-                <h3 class="p-4 text-lg"><%= user.name%></h3>
-                <h4 class="p-4 font-medium"><%= recipe.name %></h1>
+                <h3 class="p-4 text-lg">user name: <%= user.name%></h3>
+                <h4 class="p-4 text-xl font-medium">the recipe is: <%= recipe.name %></h1>
                 <p class="my-7 border-solid w-56 rounded-md border-2 borde  r-slate-200 p-4 bg-gray-50 hover:bg-black hover:text-white text-center">
                     <%= link_to "recipe details", user_recipe_path(user.id,recipe.id) %>
                 </p>
