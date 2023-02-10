@@ -7,9 +7,11 @@
 <div class="mt-5 border-solid w-56 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-slate-400 text-center">
     <%= user.name%>
     <p>
-<div class="mt-5 border-solid w-32 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-black hover:text-white text-center">
-      <%= link_to "Show this user", user %>
-</div>
+      <%= link_to user do %>
+      <button class="mt-5 border-solid w-32 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-black hover:text-white text-center">
+      Show this user <%= user.id%>
+     </button>
+     <%end%>
 </div>
     </p>
   <% end %>

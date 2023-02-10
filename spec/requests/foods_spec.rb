@@ -21,7 +21,6 @@ RSpec.describe FoodsController, type: :request do
   describe 'GET /edit' do
     let(:valid_attributes) {{ :name => "pasta", :measuement_unit => "2okg", :price => 20, :quantity =>20, :user_id => 1 }}
     it 'renders a successful response' do
-      food = Food.create! valid_attributes
       get '/users/1/recipes/1/foods/1/edit'
       expect(response).to have_http_status(302)
     end
