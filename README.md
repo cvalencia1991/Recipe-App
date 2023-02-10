@@ -82,10 +82,7 @@
 ## 🎥  Video <a name="live-demo"></a>
 
 
-
-
 https://user-images.githubusercontent.com/107327344/218142579-e5d44a53-7026-47d2-8c72-8caa2a9f7afc.mp4
-
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
