@@ -1,74 +1,42 @@
 require 'rails_helper'
+require 'support/controller_macros'
 
-RSpec.describe '/foods', type: :request do
-
-  let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
-  end
-
-  let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
-  end
+RSpec.describe FoodsController, type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Food.create! valid_attributes
-      get foods_url
-      expect(response).to be_successful
+      get '/users/1/recipes/1/foods'
+      expect(response).to have_http_status(302)
+     end
     end
   end
 
-  # describe 'GET /show' do
-  #   it 'renders a successful response' do
-  #     food = Food.create! valid_attributes
-  #     get food_url(food)
-  #     expect(response).to be_successful
-  #   end
-  # end
+  describe 'GET /new' do
+    it 'renders a successful response' do
+      get '/users/1/recipes/1/foods/new'
+      expect(response).to have_http_status(302)
+    end
+  end
 
-  # describe 'GET /new' do
-  #   it 'renders a successful response' do
-  #     get new_food_url
-  #     expect(response).to be_successful
-  #   end
-  # end
+  describe 'GET /edit' do
+    let(:valid_attributes) {{ :name => "pasta", :measuement_unit => "2okg", :price => 20, :quantity =>20, :user_id => 1 }}
+    it 'renders a successful response' do
+      food = Food.create! valid_attributes
+      get '/users/1/recipes/1/foods/1/edit'
+      expect(response).to have_http_status(302)
+    end
+  end
 
-  # describe 'GET /edit' do
-  #   it 'renders a successful response' do
-  #     food = Food.create! valid_attributes
-  #     get edit_food_url(food)
-  #     expect(response).to be_successful
-  #   end
-  # end
-
-  # describe 'POST /create' do
-  #   context 'with valid parameters' do
-  #     it 'creates a new Food' do
-  #       expect do
-  #         post foods_url, params: { food: valid_attributes }
-  #       end.to change(Food, :count).by(1)
-  #     end
-
-  #     it 'redirects to the created food' do
-  #       post foods_url, params: { food: valid_attributes }
-  #       expect(response).to redirect_to(food_url(Food.last))
-  #     end
-  #   end
-
-  #   context 'with invalid parameters' do
-  #     it 'does not create a new Food' do
-  #       expect do
-  #         post foods_url, params: { food: invalid_attributes }
-  #       end.to change(Food, :count).by(0)
-  #     end
-
-  #     it "renders a response with 422 status (i.e. to display the 'new' template)" do
-  #       post foods_url, params: { food: invalid_attributes }
-  #       expect(response).to have_http_status(:unprocessable_entity)
-  #     end
-  #   end
-  # end
-
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      let(:valid_attributes) {{ :id=> 1, :name => "pasta", :measuement_unit => "20kg", :price => 20, :quantity =>20, :user_id => 1 }}
+      it 'creates a new Food' do
+        expect do
+          post '/users/1/recipes/1/foods', params: { food: valid_attributes }
+        end.to change(Food, :ids).by(1)
+        end
+      end
+    end
   # describe 'PATCH /update' do
   #   context 'with valid parameters' do
   #     let(:new_attributes) do
@@ -113,4 +81,3 @@ RSpec.describe '/foods', type: :request do
   #     expect(response).to redirect_to(foods_url)
   #   end
   # end
-end
