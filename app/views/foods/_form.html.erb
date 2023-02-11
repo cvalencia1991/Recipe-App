@@ -1,0 +1,41 @@
+<%= form_with url:user_recipe_foods_path(params[:recipe_id]), model: food do |form| %>
+  <% if food.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class:"w-full px-4 py-3 border-solid"  %>
+  </div>
+
+  <div>
+    <%= form.label :measuement_unit, style: "display: block" %>
+    <%= form.text_field :measuement_unit, class:"w-full px-4 py-3 border-solid"  %>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" %>
+    <%= form.number_field :price, class:"w-full px-4 py-3 border-solid"  %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity, class:"w-full px-4 py-3 border-solid"  %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :user_id, value: params[:user_id] %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

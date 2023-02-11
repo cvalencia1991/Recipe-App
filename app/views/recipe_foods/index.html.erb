@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="mb-10 text-3xl font-medium">Recipe foods</h1>
+
+<div id="recipe_foods">
+  <% @recipe_foods.each do |recipe_food| %>
+    <%= render recipe_food %>
+    <p>
+    <p class="my-7 border-solid w-56 rounded-md border-2 borde  r-slate-200 p-4 bg-gray-50 hover:bg-black hover:text-white text-center">
+      <%= link_to "Show this recipe food", user_recipe_recipe_foods_path %>
+    </p>
+
+  <% end %>
+</div>
+
+<%= link_to "New recipe food", new_user_recipe_recipe_food_path, class: "mt-5 border-solid w-56 rounded-md border-2 borde  r-slate-200 p-4 bg-gray-50 hover:bg-black hover:text-white text-center" %>
