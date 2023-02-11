@@ -1,4 +1,4 @@
-<div class="m-20">
+<div class="m-20 flex flex-col items-center">
 <p style="color: green"><%= notice %></p>
 
   <h1 class="mb-11 text-3xl">My Recipes</h1>
@@ -6,7 +6,8 @@
  <div id="recipes">
   <% if user_signed_in? %>
   <% @recipes.each do |recipe| %>
-    <div class="flex items-center justify-between mt-5 border-solid w-2/3 rounded-md border-2 borde py-2 px-5 bg-gray-50 hover:bg-slate-400 text-center">
+    <%= link_to user_recipe_path(params[:user_id],recipe.id) do %>
+    <div class="flex items-center justify-between mt-5 border-solid w-will gap-16 rounded-md border-2 borde py-2 px-5 bg-gray-50 hover:bg-slate-400 text-center">
       <div>
         <h2 class="my-5 mx-auto border-solid w-32 rounded-md p-2 bg-black text-white text-center">
           <%= recipe.name %>
@@ -14,17 +15,13 @@
         <%= link_to "Remove",user_recipe_path(params[:user_id],recipe.id),data: {turbo_method: :delete}, class: "text-lg text-red-600"  %>
       </div>
       <div class="flex items-center gap-2">
-        <h2 class="mt-4">
-        disctiption: 
-        </h2>
         <div class="mt-5 border-solid w-53 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-slate-400 text-center">
+        disctiption to the recipe. </br>
           <%=recipe.description%>
         </div>
         </div>
-      <div class="mt-5 border-solid w-32 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-black hover:text-white text-center">
-        <%= link_to "recipe details", user_recipe_path(params[:user_id],recipe.id) %>
-      </div>
     </div>
+    <%end%>
   <% end %>
 </div>
 
