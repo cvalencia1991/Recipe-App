@@ -6,16 +6,16 @@
 <div>
   </p>
 
-  <p class="w-64 flex justify-between text-xl mt-4 border-2 p-2 rounded">
+  <p class="w-auto flex justify-between gap-6 text-xl mt-4 border-2 p-2 rounded">
     <strong>Preparation time:</strong>
     <%= recipe.preparation_time %> hours
   </p>
 
-  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
+  <p class="w-auto gap-6 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Cooking time:</strong>
     <%= recipe.cooking_time %> hours
   </p>
-  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
+  <p class="w-auto gap-6 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>steps:</strong>
     <%= recipe.description %>
   </p>
@@ -31,9 +31,9 @@
       </div>
   </div>
   </div>
-  <div class="flex gap-32 w-full justify-center border-none">
-    <%= link_to "add ingredeints", new_user_recipe_recipe_food_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
-    <%= link_to "general shooping list", user_recipe_shopinglists_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
+  <div class="flex px-10 w-full justify-between border-none">
+    <%= link_to "General shoping list", user_recipe_shopinglists_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
+    <%= link_to "Add ingredient", new_user_recipe_recipe_food_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
 </div>
   </div>
   
