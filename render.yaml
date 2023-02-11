@@ -1,15 +1,18 @@
 databases:
-  - name: events # Creates a database named 'events'
-    ipAllowList: [] # Only allow internal connections
+  - name: mysite
+    databaseName: mysite
+    user: mysite
 
 services:
   - type: web
-    name: events
-    env: ruby # The version is automatically picked up from a .ruby-version file
-    buildCommand: "./bin/render-build" # The script we just created above will run this to build our service
-    startCommand: "./bin/rails server" # This gets called after build
+    name: mysite
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: events
-          property: connectionString # This is a pretty nifty feature of Render that utilizes the connection string from the database we specified at the beginning of this file
+          name: mysite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
