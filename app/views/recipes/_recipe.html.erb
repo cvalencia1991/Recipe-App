@@ -1,28 +1,33 @@
 <div id="<%= dom_id recipe %>" class="w-full mb-10 border-2 border-slate-700">
-<div class="flex w-full flex-col items-center border-b-2">
-  <p class="mb-10 mt-6 text-2xl">
-    <strong>Name:</strong>
+  <p class="mb-10 mt-6 w-fill text-center text-4xl">
     <%= recipe.name %>
+<div class="flex w-full items-center px-10 pb-5 border-b-2 justify-between">
+<div>
   </p>
 
-  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
+  <p class="w-64 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
+    <%= recipe.preparation_time %> hours
   </p>
 
   <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
     <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
+    <%= recipe.cooking_time %> hours
   </p>
-
-  <p class="w-96 flex justify-between text-xl mt-4 border-2 p-2 rounded">
-    <strong>Description:</strong>
+  <p class="w-56 flex justify-between text-xl mt-4 border-2 p-2 rounded">
+    <strong>steps:</strong>
     <%= recipe.description %>
   </p>
-
-  <p class="w-56 flex justify-between text-xl mt-4 mb-4 border-2 p-2 rounded">
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
+</div>
+<div class="self-start">
+      <div class="flex gap-5 items-center ">
+        <strong class="text-xk">Public</strong>
+        <% if recipe.public %>
+          <div class="rounded-full w-5 h-5 bg-green-500"></div>
+        <% else %>
+          <div class="rounded-full w-5 h-5 bg-red-500"></div>
+          <%end%>
+      </div>
+  </div>
   </div>
 </div>

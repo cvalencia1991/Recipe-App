@@ -2,7 +2,6 @@
 
 <%= render @recipe %>
 <div class="flex gap-5">
-    <%= link_to "foods", user_recipe_foods_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
     <%= link_to "add ingredeints", new_user_recipe_recipe_food_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
     <%= link_to "general shooping list", user_recipe_shopinglists_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
 </div>
@@ -19,8 +18,10 @@
             <td class="p-4 font-medium"><%= foods.quantity %></td>
             <td class="p-4 font-medium"><%= foods.food.price * foods.quantity %></td>
              <% if user_signed_in? %>
-                  <td><%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], foods.id),data: {turbo_method: :delete}, class:"p-4 font-medium hover:text-red-500"  %>
-                  <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], foods.id), method: :edit, class:"p-4 font-medium hover:text-green-400"  %></td>  
+                  <td>
+                  <%= link_to "Modify",edit_user_recipe_path(params[:user_id], params[:id], foods.id), method: :edit, class:"p-4 font-medium hover:text-green-400"  %>
+                  <%= link_to "Remove",user_recipe_food_path(params[:user_id], params[:id], foods.id),data: {turbo_method: :delete}, class:"p-4 font-medium hover:text-red-500"  %>
+                  </td>  
             <% end %>
         </tr>
     <% end %>

@@ -5,7 +5,6 @@
   <nav class="navbar">
     <ul class="navLinks flex items-center gap-4">
       <% if user_signed_in? %>
-        <li><%= link_to "Users", users_path %></li>
         <li><%= link_to "Food List", user_recipe_foods_path(current_user.id,1) %></li>
         <li><%= link_to "My Recipes", user_recipes_path(current_user.id) %></li>
         <%= link_to "Public Recipes", root_path %>

@@ -22,6 +22,7 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
 
+    flash[:success] = 'The recipe food was created.'
     respond_to do |format|
       if @recipe_food.save
         format.html { redirect_to user_recipes_path(params[:user_id]), notice: 'Recipe food was successfully created.' }
@@ -36,6 +37,7 @@ class RecipeFoodsController < ApplicationController
   # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
   def update
     respond_to do |format|
+      flash[:success] = 'The recipe food was uptaded.'
       if @recipe_food.update(recipe_food_params)
         format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully updated.' }
         format.json { render :show, status: :ok, location: @recipe_food }
@@ -50,6 +52,7 @@ class RecipeFoodsController < ApplicationController
   def destroy
     @recipe_food.destroy
 
+    flash[:success] = 'The recipe food was deleted.'
     respond_to do |format|
       format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
       format.json { head :no_content }
