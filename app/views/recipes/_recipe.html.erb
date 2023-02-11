@@ -1,7 +1,8 @@
-<div id="<%= dom_id recipe %>" class="w-full mb-10 border-2 border-slate-700">
+<div id="<%= dom_id recipe %>" class="w-full mb-10 border-b-2 border-slate-700">
   <p class="mb-10 mt-6 w-fill text-center text-4xl">
     <%= recipe.name %>
-<div class="flex w-full items-center px-10 pb-5 border-b-2 justify-between">
+    <div class="flex flex-col">
+<div class="flex w-full items-center px-10 pb-5 justify-between">
 <div>
   </p>
 
@@ -30,4 +31,10 @@
       </div>
   </div>
   </div>
+  <div class="flex gap-32 w-full justify-center border-none">
+    <%= link_to "add ingredeints", new_user_recipe_recipe_food_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
+    <%= link_to "general shooping list", user_recipe_shopinglists_path(params[:user_id],params[:id]), class:"border-slate-700 rounded-md border-2 p-2 bg-gray-50 text-slate-700 hover:bg-black hover:text-white text-center mb-4"%>
+</div>
+  </div>
+  
 </div>

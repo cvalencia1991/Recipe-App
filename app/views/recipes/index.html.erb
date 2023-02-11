@@ -15,7 +15,7 @@
         <%= link_to "Remove",user_recipe_path(params[:user_id],recipe.id),data: {turbo_method: :delete}, class: "text-lg text-red-600"  %>
       </div>
       <div class="flex items-center gap-2">
-        <div class="mt-5 border-solid w-53 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-slate-400 text-center">
+        <div class="border-solid w-53 rounded-md border-2 borde  r-slate-200 p-2 bg-gray-50 hover:bg-slate-400 text-center">
         disctiption to the recipe. </br>
           <%=recipe.description%>
         </div>
