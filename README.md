@@ -181,8 +181,7 @@ Ubuntu
 > Describe 1 - 3 features you will add to the project.
 
 - [Implement images of the recipe] **[each time that the person Create a new recipe it suppost to add a picture of it]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
